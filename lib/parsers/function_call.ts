@@ -18,7 +18,8 @@ export function parse (rootParser: ExprParser, lexer: XPathLexer): FunctionNode 
   var functionName = lexer.peak() as string;
 
   if (!isValid(functionName)) {
-    throw new Error("Invalid function at position " + lexer.position());
+    //PF: our usage means we don't actually want to prevent unknown functions here
+    //throw new Error("Invalid function at position " + lexer.position());
   }
 
   lexer.next();
